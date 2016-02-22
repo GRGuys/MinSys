@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JSONModel.h"
+#import "OptionalJSONModel.h"
 
-@interface CYKJUserinfoModel : JSONModel
+@interface CYKJUserinfoModel : CYKJOptionalJSONModel
 
 @property(nonatomic ,copy)NSString *  userid;       // 用户在慈云系统的唯一标示
 @property(nonatomic ,copy)NSString *  personId;     // 用户在慈云系统的唯一标示

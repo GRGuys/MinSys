@@ -104,5 +104,11 @@ static AFHTTPRequestOperationManager * operationManager;
      }];
 }
 
+- (void)responseWithCmd:(NSString*)acmd data:(id)adata callback:(void(^)(id))callback
+{
+    
+}
+
+
 
 @end

@@ -15,7 +15,7 @@
 #define KDEVICE_ID_BACK_UP @"deviceIdBackup"
 #define KDEVICE_PUSH_CODE @"devicePushCode"
 
-
+#define KSTORAGEFILE_LOGIN_INFO @"storageFile_login_info"
 
 
 #define KNOTIFICATION_ACCOUNT_UPDATE @"ntf_account_update"

@@ -15,6 +15,8 @@
 
 @interface RegisterService : CYKJBaseService
 
+@property (nonatomic, strong) CYKJBaseDao* dao;
+
 - (void)requestVerificationCode:(NSString*)aPhoneNumber;
 
 @end

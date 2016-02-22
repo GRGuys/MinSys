@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AspectsManager.h"
 
 @interface AppDelegate ()
 
@@ -17,8 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    
-    
+    [AspectsManager createLoginHook];
+       
     
     
     return YES;

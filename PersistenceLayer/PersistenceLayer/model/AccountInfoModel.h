@@ -6,11 +6,11 @@
 //  Copyright © 2016年 ciyun. All rights reserved.
 //
 
-#import <PersistenceLayer/PersistenceLayer.h>
 #import "JSONModel.h"
 
 @interface CYKJAccountInfoModel : JSONModel
 
-@property(nonatomic, strong) NSString* account;
+@property (nonatomic, strong) NSString* account;
+@property (nonatomic, strong) NSString* password;
 
 @end

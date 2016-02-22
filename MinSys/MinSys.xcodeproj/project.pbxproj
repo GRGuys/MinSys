@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D88CF9C1C7AA91C007E48F9 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D88CF9B1C7AA91C007E48F9 /* Aspects.m */; };
+		7D88CF9F1C7AAA6D007E48F9 /* AspectsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D88CF9E1C7AAA6D007E48F9 /* AspectsManager.m */; };
+		7D88CFA61C7AB0B7007E48F9 /* NSObject+Reflect.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D88CFA51C7AB0B7007E48F9 /* NSObject+Reflect.m */; };
 		7DB5DAC61C740B2700228265 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB5DAC51C740B2700228265 /* LoginVC.m */; };
 		7DB5DAC91C74188D00228265 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB5DAC81C74188D00228265 /* RegisterVC.m */; };
 		7DEAE3531C72C05700DD703E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAE3521C72C05700DD703E /* main.m */; };
@@ -19,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D88CF9A1C7AA91C007E48F9 /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
+		7D88CF9B1C7AA91C007E48F9 /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
+		7D88CF9D1C7AAA6D007E48F9 /* AspectsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AspectsManager.h; sourceTree = "<group>"; };
+		7D88CF9E1C7AAA6D007E48F9 /* AspectsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AspectsManager.m; sourceTree = "<group>"; };
+		7D88CFA41C7AB0B7007E48F9 /* NSObject+Reflect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Reflect.h"; sourceTree = "<group>"; };
+		7D88CFA51C7AB0B7007E48F9 /* NSObject+Reflect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Reflect.m"; sourceTree = "<group>"; };
 		7DB5DAC41C740B2700228265 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginVC.h; path = controllers/LoginVC.h; sourceTree = "<group>"; };
 		7DB5DAC51C740B2700228265 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginVC.m; path = controllers/LoginVC.m; sourceTree = "<group>"; };
 		7DB5DAC71C74188D00228265 /* RegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterVC.h; path = controllers/RegisterVC.h; sourceTree = "<group>"; };
@@ -48,6 +57,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D88CF991C7AA91C007E48F9 /* Aspects */ = {
+			isa = PBXGroup;
+			children = (
+				7D88CFA41C7AB0B7007E48F9 /* NSObject+Reflect.h */,
+				7D88CFA51C7AB0B7007E48F9 /* NSObject+Reflect.m */,
+				7D88CF9A1C7AA91C007E48F9 /* Aspects.h */,
+				7D88CF9B1C7AA91C007E48F9 /* Aspects.m */,
+				7D88CF9D1C7AAA6D007E48F9 /* AspectsManager.h */,
+				7D88CF9E1C7AAA6D007E48F9 /* AspectsManager.m */,
+			);
+			path = Aspects;
+			sourceTree = "<group>";
+		};
 		7DB5DAC31C740AD800228265 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +101,7 @@
 		7DEAE3501C72C05700DD703E /* MinSys */ = {
 			isa = PBXGroup;
 			children = (
+				7D88CF991C7AA91C007E48F9 /* Aspects */,
 				7DB5DAC31C740AD800228265 /* controllers */,
 				7DEAE3541C72C05700DD703E /* AppDelegate.h */,
 				7DEAE3551C72C05700DD703E /* AppDelegate.m */,
@@ -172,10 +195,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DEAE3591C72C05700DD703E /* ViewController.m in Sources */,
+				7D88CF9F1C7AAA6D007E48F9 /* AspectsManager.m in Sources */,
 				7DEAE3561C72C05700DD703E /* AppDelegate.m in Sources */,
 				7DB5DAC91C74188D00228265 /* RegisterVC.m in Sources */,
 				7DB5DAC61C740B2700228265 /* LoginVC.m in Sources */,
+				7D88CFA61C7AB0B7007E48F9 /* NSObject+Reflect.m in Sources */,
 				7DEAE3531C72C05700DD703E /* main.m in Sources */,
+				7D88CF9C1C7AA91C007E48F9 /* Aspects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

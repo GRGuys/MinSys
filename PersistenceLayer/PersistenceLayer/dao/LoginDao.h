@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "BaseDao.h"
-#import "UserinfoModel.h"
+
+@class CYKJUserinfoModel;
+@class CYKJAccountInfoModel;
+
+
 
 @protocol CYKJLoginDaoPTC <NSObject>
 
@@ -18,11 +22,14 @@
 
 @end
 
+
+
 @interface CYKJLoginDao : CYKJBaseDao
 
+- (CYKJAccountInfoModel*)readLatestAccount;
+- (void)updateAccount:(NSString*)account password:(NSString*)password;
 
-- (void)readLatestAccount;
-- (void)updateAccount;
+- (CYKJUserinfoModel*)readLatestLoginInfo;
 
 - (void)requestLoginWithAccount:(NSString*)aAccount password:(NSString*)aPassword;
 

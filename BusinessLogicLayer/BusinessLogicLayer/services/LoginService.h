@@ -11,6 +11,11 @@
 #import "RequestHeader.h"
 #import "LoginDao.h"
 
+@class CYKJAccountInfoModel;
+
+
+
+
 @protocol CYKJLoginServicePTC <CYKJBaseServicePTC>
 
 - (void)responseLoginSuccess:(CYKJUserinfoModel*)data;
@@ -18,7 +23,18 @@
 
 @end
 
+
+
+
 @interface CYKJLoginService : CYKJBaseService <CYKJLoginDaoPTC>
+
+@property (nonatomic, strong) CYKJLoginDao* dao;
+
+- (CYKJAccountInfoModel*)readLatestAccount;
+- (void)updateAccount:(NSString*)account password:(NSString*)password;
+
+- (CYKJUserinfoModel*)readLatestLoginInfo;
+- (void)saveLoginInfo:(CYKJUserinfoModel*)userinfo;
 
 - (void)requestLoginWithAccount:(NSString*)account password:(NSString*)password;
 

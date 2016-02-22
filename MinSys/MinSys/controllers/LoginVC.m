@@ -9,6 +9,8 @@
 #import "LoginVC.h"
 #import "LoginService.h"
 #import "SVProgressHUD.h"
+#import "AccountInfoModel.h"
+#import "Aspects.h"
 
 @interface LoginVC ()
 
@@ -21,12 +23,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.service = [[CYKJLoginService alloc] init];
-    self.service.delegate = self;
+//    self.service = [[CYKJLoginService alloc] init];
+//    self.service.delegate = self;
     
-    NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
-    self.accountField.text = [ud objectForKey:@"lastLoginAccount"];
-    self.passwordField.text = [ud objectForKey:@"lastLoginAccountPwd"];
+    CYKJAccountInfoModel* account = [self.service readLatestAccount];
+    self.accountField.text = account.account;
+    self.passwordField.text = account.password;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,10 +57,6 @@
     NSString* account = [self.accountField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString* pwd = [self.passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
-    NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
-    [ud setObject:account forKey:@"lastLoginAccount"];
-    [ud setObject:pwd forKey:@"lastLoginAccountPwd"];
-    
     [self.service requestLoginWithAccount:account password:pwd];
 }
 
@@ -68,11 +67,13 @@
 - (void)responseSuccess:(CYKJResponseHeader*)responseModel
 {
     [self cancelLogin:nil];
+
+    
 }
 
 - (void)responseFail:(CYKJResponseHeader*)responseModel
 {
-    [SVProgressHUD showErrorWithStatus:@"登录失败！"];
+//    [SVProgressHUD showErrorWithStatus:@"登录失败！"];
 }
 
 

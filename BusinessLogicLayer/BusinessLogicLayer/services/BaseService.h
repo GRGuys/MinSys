@@ -22,7 +22,7 @@
 
 @interface CYKJBaseService : NSObject <CYKJBaseDaoPTC>
 
-@property (nonatomic, strong) CYKJBaseDao* dao;
+//@property (nonatomic, strong) CYKJBaseDao* dao;
 @property (nonatomic, strong) id <CYKJBaseServicePTC> delegate;
 
 @end

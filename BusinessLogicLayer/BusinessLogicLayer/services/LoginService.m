@@ -10,8 +10,34 @@
 #import "BaseDao.h"
 #import "LoginDao.h"
 #import "Constants.h"
+#import "AccountInfoModel.h"
 
 @implementation CYKJLoginService
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.dao = [[CYKJLoginDao alloc] init];
+        self.dao.delegate = self;
+    }
+    return self;
+}
+
+- (CYKJAccountInfoModel*)readLatestAccount
+{
+    return [self.dao readLatestAccount];
+}
+
+- (void)updateAccount:(NSString *)account password:(NSString *)password
+{
+    return [self.dao updateAccount:account password:password];
+}
+
+- (CYKJUserinfoModel*)readLatestLoginInfo
+{
+    return [self.dao readLatestLoginInfo];
+}
 
 - (void)requestLoginWithAccount:(NSString *)account password:(NSString *)password
 {
@@ -21,9 +47,8 @@
     
 //    [self.dao requestWithCommand:kDEF_CMD_LOGIN parameter:dic];
     
-    self.dao = [[CYKJLoginDao alloc] init];
-    self.dao.delegate = self;
-    [(CYKJLoginDao*)self.dao requestLoginWithAccount:account password:password];
+    [self.dao updateAccount:account password:password];
+    [self.dao requestLoginWithAccount:account password:password];
 }
 
 //- (void)responseDaoSuccess:(CYKJResponseHeader *)responseModel
@@ -41,6 +66,7 @@
 - (void)responseLoginSuccessWithData:(CYKJUserinfoModel *)data
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:KNOTIFICATION_ACCOUNT_UPDATE object:data];
+    
     if ([self.delegate respondsToSelector:@selector(responseSuccess:)]) {
         [self.delegate responseSuccess:nil];
     }
@@ -49,6 +75,7 @@
 - (void)responseLoginFailWithError:(NSString *)msg
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:KNOTIFICATION_ACCOUNT_UPDATE object:msg];
+    
     if ([self.delegate respondsToSelector:@selector(responseFail:)]) {
         [self.delegate responseFail:nil];
     }

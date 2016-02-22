@@ -14,8 +14,8 @@
 {
     self = [super init];
     if (self) {
-        self.dao = [[CYKJBaseDao alloc] init];
-        self.dao.delegate = self;
+//        self.dao = [[CYKJBaseDao alloc] init];
+//        self.dao.delegate = self;
     }
     return self;
 }

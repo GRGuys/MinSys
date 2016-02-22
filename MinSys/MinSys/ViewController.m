@@ -7,8 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "AccountInfoModel.h"
+#import "LoginService.h"
+#import "UIImageView+WebCache.h"
 
 @interface ViewController ()
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *leftNavItem;
+@property (strong, nonatomic) CYKJLoginService *service;
+@property (strong, nonatomic) CYKJAccountInfoModel *model;
 
 @end
 
@@ -17,7 +24,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.service = [[CYKJLoginService alloc] init];
+    self.service.delegate = self;
     
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.model = [self.service readLatestAccount];
+
+    if (self.model) {
+        self.leftNavItem.title = self.model.account;
+    }
     
 }
 
